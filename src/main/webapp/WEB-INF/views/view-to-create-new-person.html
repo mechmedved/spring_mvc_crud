@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CreatePerson</title>
+</head>
+<body>
+
+<form th:method="post" th:action="@{/people}" th:object="${newPerson}">
+  <label for="nameOfInput">Input name</label>
+  <input id="nameOfInput" type="text" th:field="*{name}"/>
+  <br/>
+
+  <input type="submit" value="Push to create new person"/>
+
+</form>
+
+</body>
+</html>

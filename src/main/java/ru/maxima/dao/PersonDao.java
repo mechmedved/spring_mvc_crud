@@ -9,17 +9,29 @@ import java.util.List;
 @Component
 public class PersonDao {
 
+    private static Long NEXT_ID = 0L;
+
     private List<Person> allPeople;
     {
         allPeople = new ArrayList<>();
-        allPeople.add(new Person(1L,"Alex"));
-        allPeople.add(new Person(2L,"Nicolay"));
-        allPeople.add(new Person(3L,"George"));
-        allPeople.add(new Person(4L,"Rafael"));
-        allPeople.add(new Person(5L,"Viktor"));
+        allPeople.add(new Person(++NEXT_ID,"Alex"));
+        allPeople.add(new Person(++NEXT_ID,"Nicolay"));
+        allPeople.add(new Person(++NEXT_ID,"George"));
+        allPeople.add(new Person(++NEXT_ID,"Rafael"));
+        allPeople.add(new Person(++NEXT_ID,"Viktor"));
     }
 
     public List<Person> getAllPeople() {
         return allPeople;
+    }
+
+    public Person getAllPeopleById(Long id) {
+
+        return allPeople.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
+    }
+
+    public void savePerson(Person person) {
+        person.setId(++NEXT_ID);
+        allPeople.add(person);
     }
 }
