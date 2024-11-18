@@ -14,11 +14,11 @@ public class PersonDao {
     private List<Person> allPeople;
     {
         allPeople = new ArrayList<>();
-        allPeople.add(new Person(++NEXT_ID,"Alex"));
-        allPeople.add(new Person(++NEXT_ID,"Nicolay"));
-        allPeople.add(new Person(++NEXT_ID,"George"));
-        allPeople.add(new Person(++NEXT_ID,"Rafael"));
-        allPeople.add(new Person(++NEXT_ID,"Viktor"));
+        allPeople.add(new Person(++NEXT_ID,"Alex",25,"Alex@email"));
+        allPeople.add(new Person(++NEXT_ID,"Nicolay",33,"Nicolay@email"));
+        allPeople.add(new Person(++NEXT_ID,"George",27,"George@email"));
+        allPeople.add(new Person(++NEXT_ID,"Rafael",29,"Rafael@email"));
+        allPeople.add(new Person(++NEXT_ID,"Viktor",41,"Victor@email"));
     }
 
     public List<Person> getAllPeople() {
